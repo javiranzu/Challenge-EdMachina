@@ -11,20 +11,35 @@ Para la carga de los datos se utiliza el mismo recurso "/leads" con el metodo "P
 
 
 {
+
     "nombre": "ezequiel",
+    
     "email": "ezequiel@hotmail.com",
+    
     "direccion": "ezequiel",
+    
     "telefono": "8853335",
+    
     "materias": [
+    
         {
+        
             "materia": "fisica cuantica",
+            
             "tiempo_cursado": 2,
+            
             "carrera": "lic en fisica",
+            
             "anio_inscripcion": "2018",
+            
             "veces_cursado": 1
+            
         }
+        
     ]
+    
 }
+
 *El cual se utiliza para la carga desde el formulario.*
 
 El formulario consiste en una sección para datos personales y otra sección para la carga de N materias relacionadas a la persona en cuestión,
