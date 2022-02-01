@@ -10,8 +10,9 @@ utilizando el método "GET"; ambos resultados son proporcionados en formato JSON
 Para la carga de los datos se utiliza el mismo recurso "/leads" con el metodo "POST" y recibe un JSON del siguiente formato:
 
 
-
+"
 {
+
     "nombre": "ezequiel",
     
     "email": "ezequiel@hotmail.com",
@@ -37,8 +38,9 @@ Para la carga de los datos se utiliza el mismo recurso "/leads" con el metodo "P
         }
         
     ]    
+    
 }
-
+"
 
 **El cual se utiliza para la carga desde el formulario.**
 
