@@ -2,7 +2,7 @@
 
 -----------------------------------------------------------------------------------------------------------
 
-La solución consiste en una api que permite la carga y visualización de los datos de personas que cursan N materias de N carreras.
+La solución consiste en una api desarrollada en Python que permite la carga y visualización de los datos de personas que cursan N materias de N carreras.
 Se utilizó Flask como "micro" framework para la creación de la aplicación web, y para el front simplemente html, css y javascript.
 El motor utlizado es mysql, y al inicio la aplicación verifica y crea la base de datos y las tablas si es necesario.
 Se pueden obtener los resultados de los leads a través del recurso "/leads" (para todo el listado de leads) o "/leads/<id_registro>" (para obtener el resultado de uno en específico)
