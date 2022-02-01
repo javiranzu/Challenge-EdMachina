@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Challenge EdMachina</title>
+
+    <!-- Icons font CSS-->
+    <link href="{{ url_for("static", filename="/vendor/mdi-font/css/material-design-iconic-font.min.css") }}" rel="stylesheet" media="all">
+    <link href="{{ url_for("static", filename="/vendor/font-awesome-4.7/css/font-awesome.min.css") }} " rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{{ url_for("static", filename="/vendor/select2/select2.min.css") }}" rel="stylesheet" media="all">
+    <link href="{{ url_for("static", filename="/vendor/datepicker/daterangepicker.css") }}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{{ url_for("static", filename="/css/main.css") }}" rel="stylesheet" media="all">
+    <script>
+        function eliminar_materia(id){
+            materias.splice(id,1);
+            console.log(materias)
+    
+            materia_html=''
+            i=0
+            materias.forEach(element => {
+                console.log(element)
+                materia_html = materia_html + '<div class="btn btn--radius btn--yellow" style="cursor:auto; margin-right:2px; margin-bottom:2px;">'+element['materia']+" "+'<i onclick="eliminar_materia('+i+')" class="zmdi zmdi-close imaterias" style="cursor: pointer;"></i>'+'</div>';
+                i+=1
+            });
+        
+            $("#row_materias").html(materia_html);
+        };
+    </script>
+</head>
+
+<body>
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Información Personal</h2>
+                    <form method="POST">
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Nombre Completo(*)" name="nombre">
+                            <i class="zmdi zmdi-account input-icon"></i>
+                        </div>
+                        <div class="input-group">                           
+                            <input class="input--style-1" type="text" placeholder="Dirección(*)" name="direccion">
+                            <i class="zmdi zmdi-home input-icon imaterias"></i>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="email" placeholder="Email(*)" name="email">
+                            <i class="zmdi zmdi-email input-icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="number" placeholder="Teléfono(*)" name="telefono">
+                            <i class="zmdi zmdi-phone input-icon"></i>                            
+                        </div>
+                        <h3 class="title">Carga de materias</h3>
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Materia(*)" name="materia">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" min="0" type="number" placeholder="Meses cursado(*)" name="tiempo_cursado">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Carrera(*)" name="carrera">
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="gender" id="anio_inscripcion">
+                                        <option disabled="disabled" selected="selected">Año de Inscripción(*)</option>
+                                        <option value="2022">2022</option>
+                                        <option>2021</option>
+                                        <option>2019</option>
+                                        <option>2018</option>
+                                        <option>2017</option>
+                                        <option>2016</option>
+                                        <option>2015</option>
+                                        <option>2014</option>
+                                        <option>2013</option>
+                                        <option>2012</option>
+                                        <option>2011</option>
+                                        <option>2010</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" min="0" type="numer" placeholder="Número de veces cursada la materia (*)" name="veces_cursado">
+                        </div>
+                        <div class="div-button-materia">
+                            <div class="btn btn--radius btn--orange" id="guardar_materia">Guardar Materia</div>
+                            <div id="error_materia" style="color:red"></div>
+                        </div>
+                        <h3 class="title">Materias cargadas</h3>
+                        <div id="row_materias" class="row-space"></div>
+                        <div class="input-group"></div>
+
+                        <div class="btn btn--radius btn--green" id="enviar_formulario">Enviar</div>
+                        <div id="error_formulario" style="color:red"></div>
+                        <div id="sucess_formulario" style="color: #57b846; font-weight: bold;"></div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{{ url_for("static", filename="/vendor/jquery/jquery.min.js") }}"></script>
+    <!-- Vendor JS-->
+    <script src="{{ url_for("static", filename="/vendor/select2/select2.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="/vendor/datepicker/moment.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="/vendor/datepicker/daterangepicker.js") }}"></script>
+
+    <!-- Main JS-->
+    <script src="{{ url_for("static", filename="/js/global.js") }}"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
