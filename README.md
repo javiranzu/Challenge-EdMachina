@@ -40,11 +40,10 @@ Para la carga de los datos se utiliza el mismo recurso "/leads" con el metodo "P
     
 }
 
-*El cual se utiliza para la carga desde el formulario.*
+**El cual se utiliza para la carga desde el formulario.**
 
 El formulario consiste en una sección para datos personales y otra sección para la carga de N materias relacionadas a la persona en cuestión,
 donde se pueden ir precargando las materias a una lista y se pueden eliminar de la misma si asi se requiera.
 La interfaz posee una validación de datos obligatorios, de mínimo de materias(1) y de email.
 Al cumplirse los requisitos del formulario y enviar al información este devuelve el id de registro para su trazabilidad.
 
-PD: adjunto la carpeta 'challenge' donde se encuentran los archivos de la base de datos(aunque no son necesarios).
